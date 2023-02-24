@@ -12,7 +12,8 @@ const date = new Date();
 const currentTime = date.toLocaleTimeString();
 document.querySelector('.time').innerHTML = currentTime;
 
-const currentDate = date.toLocaleDateString();
+const options = { weekday: 'long', month: 'long', day: 'numeric' };
+const currentDate = date.toLocaleDateString('en-Us', options);
 document.querySelector('.date').innerHTML = currentDate;
 
 function showTime() {
@@ -23,4 +24,4 @@ showTime();
 function showDate() {
   return currentDate, setTimeout(showDate, 1000);
 }
-showDate();
+console.log(showDate());
